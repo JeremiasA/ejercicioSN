@@ -1,6 +1,7 @@
 const actualDir = require('./actualDir');
 const File = require("./classes/File");
 const Folder = require("./classes/Folder");
+const memory = require('./memory/memory')
 
 module.exports = {
     create_file: (receivedInput) => require('./commands/files_and_folders/create_file')(receivedInput,File,actualDir),

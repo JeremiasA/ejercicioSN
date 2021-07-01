@@ -1,7 +1,5 @@
 
-folders = [
-    {name:"root",_id:0,parentFolder:-1}
-]
+folders = []
 
 files = []
 

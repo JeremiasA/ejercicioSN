@@ -1,0 +1,12 @@
+{
+  "folders": [],
+  "files": [],
+  "users": [
+    {
+      "username": "admin",
+      "_id": 1,
+      "role": "super",
+      "pass": "1234"
+    }
+  ]
+}
