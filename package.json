@@ -4,8 +4,8 @@
   "description": "",
   "main": "consola.js",
   "scripts": {
-    "start": "node consola.js",
-    "dev": "nodemon consola.js"
+    "start": "node src/consola.js",
+    "dev": "nodemon src/consola.js"
   },
   "author": "Jeremias Amestoy",
   "license": "ISC",
