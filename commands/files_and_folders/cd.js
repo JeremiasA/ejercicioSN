@@ -14,7 +14,6 @@ module.exports = async (receivedInput) => {
         actualDir.path.pop();
         actualDir.dir = actualDir.prev;
         actualDir.prev = actualDir.dir.parentFolder;
-        console.log(actualDir);
     } else {
         let validated = await validateCd(receivedInput);
         if (typeof (validated) === "string") {
@@ -24,6 +23,7 @@ module.exports = async (receivedInput) => {
         actualDir.prev = actualDir.dir;
         actualDir.dir = validated[0];
         actualDir.path.push(receivedParams[1] + "/");
+        
     }
     return;
 };

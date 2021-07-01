@@ -19,7 +19,7 @@ const validateNotExists = async (receivedInput) => {
     }
 };
 
-const validateShow = (receivedInput, title) => {
+const validateShow = (receivedInput) => {
     const receivedParams = receivedInput.split(" ");
     if (receivedParams.length !== 2) {
         return "Error: Invalid arguments => show <filename>";
@@ -37,7 +37,7 @@ const validateShow = (receivedInput, title) => {
     }
 };
 
-const validateMetadata = (receivedInput, title) => {
+const validateMetadata = (receivedInput) => {
     const receivedParams = receivedInput.split(" ");
     if (receivedParams.length !== 2) {
         return "Error: Invalid arguments => metadata <filename>";
@@ -55,7 +55,7 @@ const validateMetadata = (receivedInput, title) => {
     }
 };
 
-const validateDestroy = (receivedInput, title) => {
+const validateFileDestroy = (receivedInput) => {
     const receivedParams = receivedInput.split(" ");
 
     if (receivedParams.length !== 2) {
@@ -77,7 +77,7 @@ const validateDestroy = (receivedInput, title) => {
 module.exports = {
     validateParams,
     validateShow,
-    validateDestroy,
+    validateFileDestroy,
     validateMetadata,
     validateNotExists,
 };

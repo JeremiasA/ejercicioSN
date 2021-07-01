@@ -1,7 +1,19 @@
-const User = require("./User");
-const actualDir = require('./actualDir');
+const memory = require("./memory/memory");
+const User = require('./classes/User')
 const commandsList = require("./commands");
+const activeUser = require('./activeUser')
+const actualDir = require('./actualDir');
 const {input} = require('./prompt');
+
+//init users
+    const inviteduser = new User("invited-user", "1234", "read-only")
+    memory.users.push(inviteduser)
+    const admin = new User("admin", "1234", "super")
+    memory.users.push(admin)
+    activeUser.user= inviteduser
+    actualDir.path[0]=`\x1b[36m${activeUser.user.username}@\x1b[0m`
+
+
 
 const prmpt = async () =>{
 let exit=false

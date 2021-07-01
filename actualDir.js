@@ -1,7 +1,8 @@
-let activeUser ='\x1b[36mJeremias@root/\x1b[0m'
+const activeUser = require('./activeUser')
+let active="invited"
 
 module.exports={
     dir:{name:"root",_id:0},
     prev:0,
-    path:[activeUser]
+    path:[active]
 }
