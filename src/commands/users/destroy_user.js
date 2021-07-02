@@ -15,5 +15,4 @@ module.exports = async (receivedInput) => {
    
     const indice = memory.users.indexOf(validate[0])
     memory.users.splice(indice,1);
-    console.log(users);
     }

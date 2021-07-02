@@ -13,6 +13,5 @@ module.exports = async (receivedInput) => {
     
     validateError = await validateUpdatePassword(receivedPassword)
     if(validateError) return validateError
-   
-    activeUser.user.setPassword(receivedPassword)
+    await activeUser.user.setPassword(receivedPassword)
 }

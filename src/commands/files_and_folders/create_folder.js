@@ -18,7 +18,7 @@ module.exports = async (receivedInput) => {
     if (validateError) return validateError
 
     validateError = await validateNotExists(receivedInput, name);
-    if (validateError) return validationError
+    if (validateError) return validateError
     
     memory.folders.push(new Folder(name, parentFolder));
     return;

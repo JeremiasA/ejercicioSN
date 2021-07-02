@@ -30,6 +30,5 @@ module.exports = async (receivedInput) => {
     if (validationErr) return validationErr;
 
     memory.users.push(new User(receivedUsername, receivedPassword, receivedRole));
-    console.log(memory.users);
     return;
 };

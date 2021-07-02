@@ -4,12 +4,17 @@
   "description": "",
   "main": "consola.js",
   "scripts": {
-    "start": "node src/consola.js"
+    "start": "node src/consola.js",
+    "test": "mocha ./*/test/*.test.js"
   },
   "author": "Jeremias Amestoy",
   "license": "ISC",
-   "dependencies": {
+  "dependencies": {
     "fs": "0.0.1-security",
     "prompt": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.0.1"
   }
 }

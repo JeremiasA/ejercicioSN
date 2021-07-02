@@ -13,7 +13,7 @@ module.exports = class User {
       return this.latestId
     }
      setPassword(newPassword) {
-      this.password=newPassword;
+      this.#password=newPassword;
     } 
     getPassword(){
       return this.#password
