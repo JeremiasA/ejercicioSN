@@ -8,7 +8,7 @@ const validateParams = async (receivedInput) => {
 };
 
 const validateCd = async (receivedInput) => {
-    const receivedParams = receivedInput.split(" ");
+    const receivedParams = receivedInput.trim().split(" ");
     if (receivedParams.length !== 2)
         console.log(
             "Error: Invalid arguments"
