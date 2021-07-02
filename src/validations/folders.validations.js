@@ -10,7 +10,9 @@ const validateParams = async (receivedInput) => {
 const validateCd = async (receivedInput) => {
     const receivedParams = receivedInput.split(" ");
     if (receivedParams.length !== 2)
-        
+        console.log(
+            "Error: Invalid arguments"
+        );
     const foundedDir = memory.folders.filter(
         (folder) =>
             folder.name === receivedParams[1] &&
