@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "name": "aaa",
+      "parentFolder": {
+        "name": "root",
+        "_id": 0
+      },
+      "_id": 1,
+      "createdAt": "7/1/2021, 8:47:22 PM"
+    }
+  ],
+  "files": [],
+  "users": [
+    {
+      "username": "admin",
+      "_id": 1,
+      "role": "super",
+      "pass": "1234"
+    }
+  ]
+}

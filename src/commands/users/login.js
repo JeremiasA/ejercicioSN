@@ -7,12 +7,9 @@ module.exports = async (receivedInput) => {
     const receivedPassword = receivedInput.split(" ")[2] 
     const receivedUsername = receivedInput.split(" ")[1]
 
-
     validateError = await validateLoginParams(receivedInput);
-    if (validateError) {
-        return validateError;
-    }
-
+    if (validateError) return validateError;
+    
     const foundedUser = memory.users.filter( user => user.username === receivedUsername);
     if (foundedUser.length !== 0) {
         const userPass = foundedUser[0].getPassword()

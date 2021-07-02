@@ -1,4 +1,3 @@
-
 module.exports = class File {
     constructor(name,content, parentFolder,user){
         this.name = name,

@@ -1,5 +1,5 @@
 const actualDir = require("../../actualDir");
 
-module.exports = async () => {
+module.exports = () => {
     console.log(actualDir.path.join(""))
 }

@@ -1,4 +1,3 @@
-const activeUser = require('./activeUser')
 let active="invited"
 
 module.exports={

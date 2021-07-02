@@ -1,5 +1,4 @@
 const commands = require('../commands'); 
-const create_file = require('./files_and_folders/create_file');
 
 module.exports = () =>{
     let description=""
@@ -45,14 +44,16 @@ module.exports = () =>{
             case "whoami":
                 description="Shows logged user"    
                 break;       
+            case "help":
+                description="Shows help"    
+                break;
             case "exit":
-                description="Close the console"    
-                break; 
+                description="Close this console"    
+                break;  
             default:
                 break;
         }
         console.log(`\x1b[36m${command}\x1b[0m` + " - " + description)
     }
-    
 
 }

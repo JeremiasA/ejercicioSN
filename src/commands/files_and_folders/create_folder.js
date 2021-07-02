@@ -1,27 +1,25 @@
-const { validateParams, validateNotExists } = require("../../validations/folders.validations");
-const {isReadOnly} = require('../../validations/role.validations')
+const {
+    validateParams,
+    validateNotExists,
+} = require("../../validations/folders.validations");
+const { isReadOnly } = require("../../validations/role.validations");
 const memory = require("../../memory/memory");
-const actualDir = require('../../actualDir');
+const actualDir = require("../../actualDir");
+const Folder = require("../../classes/Folder");
 
-module.exports = async (receivedInput, Folder) => {
+module.exports = async (receivedInput) => {
+    const name = receivedInput.split(" ")[1];
+    const parentFolder = actualDir.dir;
+
+    let validateError = await validateParams(receivedInput, name);
+    if (validateError) return validateError
+
+    validateError = await isReadOnly();
+    if (validateError) return validateError
+
+    validateError = await validateNotExists(receivedInput, name);
+    if (validateError) return validationError
     
-        const name = receivedInput.split(" ")[1];
-        const parentFolder = actualDir.dir
-    
-        let validationError = await validateParams(receivedInput,name);
-       if (validationError) {
-          return validationError;
-        }
-
-        validateError = await isReadOnly()
-        if (validateError) {
-            return validateError
-        }
-
-       let validationErr = await validateNotExists(receivedInput,name);
-       if (validationErr) {
-          return validationErr;
-        }
-        memory.folders.push(await new Folder(name, parentFolder));
-        return;
-    }
+    memory.folders.push(new Folder(name, parentFolder));
+    return;
+};

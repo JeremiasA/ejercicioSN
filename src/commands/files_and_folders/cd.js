@@ -3,12 +3,9 @@ const memory = require("../../memory/memory");
 const actualDir = require("../../actualDir");
 
 module.exports = async (receivedInput) => {
-    const receivedParams = receivedInput.split(" ");
-    if (
-        receivedInput.trim().split(" ").length == 1 ||
-        (actualDir.dir._id === 0 && receivedParams[1] === "..")
-    )
-        return; //case "cd" or actual dir = root
+    const receivedParams = receivedInput.trim().split(" ");
+
+    if ( receivedParams.length == 1 || (actualDir.dir._id === 0 && receivedParams[1] === "..")) return; 
 
     if (receivedParams[1] === "..") {
         actualDir.path.pop();

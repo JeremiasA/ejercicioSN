@@ -2,28 +2,27 @@ const { validateParams, validateNotExists } = require("../../validations/files.v
 const {isReadOnly} = require('../../validations/role.validations')
 const memory = require("../../memory/memory");
 const activeUser = require('../../activeUser')
+const File = require('../../classes/File')
+const actualDir = require('../../actualDir')
 
-module.exports = async (receivedInput, File, actualDir) => {
+module.exports = async (receivedInput) => {
     const receivedParams = receivedInput.split(" ");
     const name = receivedParams[1];
-        let validationError = await validateParams(receivedInput);
-        if (validationError) {
-            return validationError;
-        }
         
-        validateError = await isReadOnly()
-        if (validateError) {
-            return validateError
-        }
+    let validateError = await validateParams(receivedInput);
+    if (validateError) return validateError
+    
+    validateError = await isReadOnly()
+    if (validateError) return validateError
 
-       let validationErr = await validateNotExists(receivedInput,name);
-       if (validationErr) {
-          return validationErr;
-        }
-        const content = receivedParams
-            .splice(2, receivedParams.length)
-            .join(" ");
-        const parentFolder = actualDir.dir._id;
-        memory.files.push(await new File(name, content,parentFolder, activeUser.user.username));
-        return;
+    validateErr = await validateNotExists(receivedInput,name);
+    if (validateError) return validateError
+
+    const content = receivedParams
+        .splice(2, receivedParams.length)
+        .join(" ");
+    const parentFolder = actualDir.dir._id;
+
+    memory.files.push(new File(name, content,parentFolder, activeUser.user.username));
+    return;
     }

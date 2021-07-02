@@ -1,13 +1,12 @@
-const memory = require("../memory/memory");
 const activeUser = require('../activeUser');
 
-const isAdmin = async () => {
+const isAdmin = () => {
     if (activeUser.user.role !== "super") {
         return "Permission denied: Super user privileges needed.";
 };
 }
 
-const isReadOnly = async () => {
+const isReadOnly = () => {
     if (activeUser.user.role === "read-only") {
         return "Permission denied for 'read-only' users.";
 };

@@ -1,4 +1,3 @@
-
 module.exports = class Folder {
     constructor(name,parentFolder){
         this.name = name,
