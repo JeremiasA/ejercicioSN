@@ -13,5 +13,6 @@ module.exports = {
     login: (receivedInput) => require('./commands/users/login')(receivedInput),
     whoami: () => require('./commands/users/whoami')(),
     help:() => require('./commands/help')(),
-    exit: () => exit = true
+    exit: () => exit = true,
+    clear:()=>console.clear()
 };

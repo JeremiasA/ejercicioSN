@@ -47,6 +47,9 @@ module.exports = () =>{
             case "help":
                 description="Shows help"    
                 break;
+            case "clear":
+                description="Clear console"    
+                break;  
             case "exit":
                 description="Close this console"    
                 break;  
